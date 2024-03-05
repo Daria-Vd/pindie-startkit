@@ -6,7 +6,7 @@ const Footer = () => {
     const listItemData = ["YT", "ВК", "TG"];
     return (
         <footer className={styles.footer}>
-            <a href="/" className={styles["footer__logo"]}>
+            <a href="/" className={styles.footer__logo}>
                 <span className={styles["footer__logo-name"]}>pindie</span>
                 <span className={styles["footer__logo-copy"]}>, XXI век</span>
             </a>
