@@ -38,10 +38,6 @@ module.exports = {
                 allowTemplateLiterals: true
             }
         ],
-        "multiline-ternary": [0],
-        "dot-notation": [
-            "error",
-            { allowKeywords: false, allowPattern: "^[a-z]+(__[a-z]+)*$" }
-        ]
+        "multiline-ternary": [0]
     }
 };

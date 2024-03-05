@@ -4,7 +4,7 @@ import styles from "./Footer.module.css";
 const Footer = () => {
     return (
         <footer className={styles.footer}>
-            <a href="/" className={styles["footer__logo"]}>
+            <a href="/" className={styles.footer__logo}>
                 <span className={styles["footer__logo-name"]}>pindie</span>
                 <span className={styles["footer__logo-copy"]}>, XXI век</span>
             </a>
