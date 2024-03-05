@@ -1,7 +1,16 @@
 import React from "react";
 import styles from "./Header.module.css";
+import HeaderListFragment from "@/components/header/HeaderListFragment";
 
 const Header = () => {
+    const titleData = [
+        "Новинки",
+        "Популярные",
+        "Шутеры",
+        "Раннеры",
+        "Пиксельные",
+        "TDS"
+    ];
     return (
         <header className={styles.header}>
             <a href="/" className={styles.logo}>
@@ -13,36 +22,9 @@ const Header = () => {
             </a>
             <nav className={styles.menu}>
                 <ul className={styles["menu__list"]}>
-                    <li className={styles["menu__item"]}>
-                        <a href="" className={styles["menu__link"]}>
-                            Новинки
-                        </a>
-                    </li>
-                    <li className={styles["menu__item"]}>
-                        <a href="" className={styles["menu__link"]}>
-                            Популярные
-                        </a>
-                    </li>
-                    <li className={styles["menu__item"]}>
-                        <a href="" className={styles["menu__link"]}>
-                            Шутеры
-                        </a>
-                    </li>
-                    <li className={styles["menu__item"]}>
-                        <a href="" className={styles["menu__link"]}>
-                            Раннеры
-                        </a>
-                    </li>
-                    <li className={styles["menu__item"]}>
-                        <a href="" className={styles["menu__link"]}>
-                            Пиксельные
-                        </a>
-                    </li>
-                    <li className={styles["menu__item"]}>
-                        <a href="" className={styles["menu__link"]}>
-                            TDS
-                        </a>
-                    </li>
+                    {titleData.map((title, i) => (
+                        <HeaderListFragment key={i} title={title} />
+                    ))}
                 </ul>
                 <div className={styles.auth}>
                     <button className={styles["auth__button"]}>Войти</button>
