@@ -39,6 +39,9 @@ module.exports = {
             }
         ],
         "multiline-ternary": [0],
-        "dot-notation": ["error", { allowKeywords: false, allowPattern: "^[a-z]+(__[a-z]+)*$" }]
+        "dot-notation": [
+            "error",
+            { allowKeywords: false, allowPattern: "^[a-z]+(__[a-z]+)*$" }
+        ]
     }
 };
