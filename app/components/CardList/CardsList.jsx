@@ -10,8 +10,12 @@ const CardsList = ({ id, title, data }) => {
                 {title}
             </h2>
             <ul className={styles["cards-list"]}>
-                {data.map((item, i) => (
-                    <Card key={i} {...item} />
+                {data.map(({ link = "/", ...item }, i) => (
+                    <li key={i} className={styles["cards-list__item"]}>
+                        <a href={link} className={styles["card-list__link"]}>
+                            <Card {...item} />
+                        </a>
+                    </li>
                 ))}
             </ul>
         </section>

@@ -28,3 +28,14 @@
     gap: 45px;
     padding: 68px 120px;
 }
+
+
+.card-list__link {
+    display: flex;
+    height: 100%;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.card-list__link:hover {
+    background-color: black;
+}
