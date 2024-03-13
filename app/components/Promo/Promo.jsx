@@ -5,14 +5,20 @@ import styles from "./Promo.module.css";
 const Promo = () => {
     const [codeIsVisible, setCodeIsVisible] = useState(false);
     useEffect(() => {
-        const timeOut = codeIsVisible
-            ? setTimeout(() => setCodeIsVisible(false), 5000)
-            : null;
-
-        return () => clearTimeout(timeOut);
+        let timeout;
+        if (codeIsVisible) {
+            timeout = setTimeout(() => {
+                setCodeIsVisible(false);
+            }, 5000);
+        }
+        return () => {
+            clearTimeout(timeout);
+        };
     }, [codeIsVisible]);
     const handleButtonClick = () => {
-        setCodeIsVisible((prevState) => !prevState && !prevState);
+        setCodeIsVisible(
+            (prevState) => !codeIsVisible && setCodeIsVisible(true)
+        );
     };
     return (
         <section className={styles.promo}>
