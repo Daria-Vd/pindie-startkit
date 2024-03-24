@@ -1,13 +1,27 @@
+"use client";
+
 import React from "react";
 import styles from "./Footer.module.css";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const Footer = () => {
+    const pathname = usePathname();
+    const logoContent = (
+        <>
+            <span className={styles["footer__logo-name"]}>pindie</span>
+            <span className={styles["footer__logo-copy"]}>, XXI век</span>
+        </>
+    );
     return (
         <footer className={styles.footer}>
-            <a href="/" className={styles.footer__logo}>
-                <span className={styles["footer__logo-name"]}>pindie</span>
-                <span className={styles["footer__logo-copy"]}>, XXI век</span>
-            </a>
+            {pathname === "/" ? (
+                <div className={styles.footer__logo}>{logoContent}</div>
+            ) : (
+                <Link href="/" className={styles.footer__logo}>
+                    {logoContent}
+                </Link>
+            )}
             <ul className={styles["social-list"]}>
                 <li className={styles["social-list__item"]}>
                     <a
